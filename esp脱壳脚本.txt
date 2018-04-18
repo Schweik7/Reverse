@@ -1,0 +1,28 @@
+// 
+// ESP 定律脱壳脚本 by visionfans @ 2011.04.15
+//
+// clear hardware breakpoints
+	bphwcall
+// record original ESP and changed ESP
+	var ori_esp
+	var chg_esp
+	mov ori_esp,esp
+// step until ESP changed
+loop1:
+	sto
+	cmp ori_esp,esp
+	je loop1
+// record changed ESP
+	mov chg_esp,esp
+	bphws chg_esp,"r"
+	run
+// near OEP
+	bphwc chg_esp
+	an eip
+loop2:
+	sto
+	cmp ori_esp,esp
+	jnz loop2
+// almost arrived OEP
+	msg "Already at or near OEP!/r/nBe ready to dump! "
+	ret
