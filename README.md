@@ -33,6 +33,7 @@ xss:<script>，定义客户端脚本
 <object data=>，定义引用对象数据的 URL
 <svg onload=>，定义SVG资源引用
 }region
+
 ##### server
 1. Nginx文件后缀解析特性:cgi.fix_pathinfo = 1 
 2. IIS 短文件名爆破;6.0解析时忽略分号;存在1的CGI解析特性
@@ -45,7 +46,9 @@ xss:<script>，定义客户端脚本
 4. 安全配置错误(intitle:index of)
 5. XSS:反射型;存储型;DOM型
     <script>alert(document.cookie)</script>
-6. 不安全的反序列化:
+6. 不安全的反序列化;使用含有已知漏洞的组件
+
+#### 逆向工程基础
 
 
 
