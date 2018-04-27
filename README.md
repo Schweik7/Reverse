@@ -142,4 +142,61 @@
 4. context code/registe/stack 展示
 5. crashdump 
 6. deactive (chdir sleep )跳过函数 
-7. 
+7. distance addr1 addr2
+8. dumpargs 显示参数
+9. dumpmem libc.mem libc 
+10. dumprop binary "pop"
+11. elfsymbol printf 获取符号信息 plt,got
+12. gennop 500 "\x90"
+13. goto 
+14. help
+15. hexdump $sp 64 显示堆栈
+16. hexprint $sp 64 用字符串格式显示
+17. jmpcall (eax/ esp libc) 搜索跳转的指令
+18. loadmem
+19. lookup 查找引用 lookup address stack libc ; lookup pointer stack ld-2
+20. nearpc [addr] 反汇编附近的信息
+21. nextcall / nextjmp 执行到 call / jmp
+22. patch $esp 0xdeadbeef / "a long str"
+23. pattern
+    pattern_arg ; pattern_create ; pattern_env ; pattern_offset ; pattern_patch ; pattern_search ;
+24. payload 使用ret2plt生成ROPpayload; payload copybytes target "/bin/sh"
+25. procinfo
+26. profile
+27. readelf libc .text
+28. refsearch "/bin/sh"搜索值的所有引用
+29. ropgadget (libc)
+30. ropsearch "pop eax" (libc)
+31. session save/restore 保存会话
+32. sgrep 索索字串
+33. shellcode (x86/linux exec) 生成下载shellcode
+34. skeleton argv exploit.py 生成脚本模板
+35. snapshot save / restore 生成/读取快照!!
+36. stepuntil (cmp / xor) 执行到指令
+37. tracecall "cpy , printf " 追踪
+38. traceinst "cmp,xor" 追踪指令
+39. vmmap 获取段的虚拟映射地址范围
+40. xormem [begin] [end] "key" 对内存进行异或
+41. http://ropshell.com/peda/ python使用peda
+42. GEF/pwndbg 查看堆
+
+#### Radare2
+1. r2 -c=H a.out 开启web视图
+#### IDA插件
+1. FLIRT 识别库函数
+2. find crypt 寻找加密算法的常数
+3. IDA signsrch 寻找算法
+4. ponce 污点分析,符号执行
+5. snowman 不知道和HexRay反编译哪个好
+6. auto re 函数重命名,不知道好不好用
+7. idaemu 模拟代码执行,不知道什么用
+8. diaphora 补丁比对
+9. keypatch  patch文件;像OD那样改
+10. friend  哪里不会点哪里
+11. simplifyGraph 简化幻术流程图
+12. bincat 静态分析包
+13. hexrayspytools alt+f8 建立结构;alt+f1 建立类
+####
+1. binwalk -Me firmware.bin 递归扫描文件
+2. 
+
